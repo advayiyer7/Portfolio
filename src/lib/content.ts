@@ -23,7 +23,7 @@ export const hero = {
   eyebrow: "CE & CS @ USC · SWE / AI-ML",
   headline: "I build AI that shows its work.",
   subline:
-    "I'm a Computer Engineering & CS senior at USC, graduating in 2027. Lately that means an insight engine over 12,000 rows of supplier spend at Oraczen, entropy-based confidence scores for LLM answers, and GNN task schedulers in Prof. Krishnamachari's lab.",
+    "I'm a Computer Engineering & CS senior at USC, class of 2027. Right now I'm an AI engineer intern at Oraczen, building agentic procurement tools like an insight engine over 12,000 rows of supplier spend. Before that I shipped a client-facing RAG web app at Publicis Sapient, and on my own time I've launched three AI products you can use today: Facet, Tek, and MenuBox AI.",
 } as const;
 
 export const nav = {
