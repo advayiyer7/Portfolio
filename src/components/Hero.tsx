@@ -2,23 +2,8 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { hero, site } from "@/lib/content";
-import GlowCurve from "./GlowCurve";
+import ScheduleDag from "./ScheduleDag";
 import SocialIcons from "./SocialIcons";
-
-// split the headline so accent phrases get the neon glow
-function renderHeadline(text: string, accents: readonly string[]) {
-  const escaped = accents.map((a) => a.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
-  const re = new RegExp(`(${escaped.join("|")})`, "g");
-  return text.split(re).map((chunk, i) =>
-    accents.includes(chunk) ? (
-      <span key={i} className="text-glow-cyan">
-        {chunk}
-      </span>
-    ) : (
-      <span key={i}>{chunk}</span>
-    ),
-  );
-}
 
 const ease = [0.22, 0.61, 0.36, 1] as const;
 
@@ -38,18 +23,16 @@ export default function Hero() {
     >
       {/* background layers — calm, centered */}
       <div className="pointer-events-none absolute inset-0 bg-dot-grid mask-radial-fade opacity-60" />
-      <div className="glow-blob animate-pulse-glow left-1/2 top-1/3 h-[520px] w-[680px] -translate-x-1/2 -translate-y-1/2 bg-blue/15" />
 
-      {/* signature curve — pinned to the lower band as a clean background accent */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[38%] opacity-50">
-        <GlowCurve showLabels={false} />
+      {/* task-graph figure — pinned to the lower band */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[38%] opacity-45">
+        <ScheduleDag />
       </div>
 
       {/* centered content */}
       <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center">
         <motion.div {...rise(0.04)} className="mb-7">
-          <span className="inline-flex items-center gap-2.5 rounded-full border border-border bg-surface/50 px-4 py-1.5 font-mono text-[0.72rem] tracking-wide text-muted backdrop-blur">
-            <span className="h-2 w-2 rounded-full bg-cyan shadow-[0_0_10px_2px_var(--color-cyan)]" />
+          <span className="inline-flex items-center border-l-2 border-accent bg-surface/40 px-3.5 py-1.5 font-mono text-[0.72rem] uppercase tracking-[0.14em] text-muted">
             Open to SWE / AI-ML internships &amp; full-time roles · 2027
           </span>
         </motion.div>
@@ -65,7 +48,7 @@ export default function Hero() {
           {...rise(0.24)}
           className="mt-6 max-w-2xl font-display text-xl font-medium leading-snug tracking-tight text-fg/90 sm:text-2xl"
         >
-          {renderHeadline(hero.headline, hero.accentWords)}
+          {hero.headline}
         </motion.p>
 
         <motion.p
@@ -82,8 +65,7 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-bg transition-transform hover:scale-[1.03]"
-            style={{ boxShadow: "0 0 28px -4px var(--color-cyan)" }}
+            className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-bg transition-transform hover:scale-[1.03]"
           >
             View Projects
           </a>
@@ -91,7 +73,7 @@ export default function Hero() {
             href={site.resume}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-border bg-surface/60 px-6 py-3 text-sm font-medium text-fg backdrop-blur transition-colors hover:border-cyan/50 hover:text-cyan"
+            className="rounded-full border border-border bg-surface/60 px-6 py-3 text-sm font-medium text-fg backdrop-blur transition-colors hover:border-accent/60 hover:text-accent"
           >
             Resume
           </a>

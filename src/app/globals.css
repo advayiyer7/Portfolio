@@ -7,20 +7,25 @@
 
 @theme {
   /* surfaces */
-  --color-bg: #06070d;
-  --color-bg-elevated: #0b0d18;
-  --color-surface: #10131f;
-  --color-border: #1d2233;
+  --color-bg: #121110;
+  --color-bg-elevated: #171511;
+  --color-surface: #1c1916;
+  --color-border: #2e2a23;
 
   /* text */
-  --color-fg: #e7ebf4;
-  --color-muted: #8a93a8;
-  --color-faint: #565f73;
+  --color-fg: #eae6dd;
+  --color-muted: #a09885;
+  --color-faint: #6b6457;
 
-  /* accents */
-  --color-cyan: #4de0f0;
-  --color-blue: #5b8cff;
-  --color-violet: #8b5cf6;
+  /* accent — one color, used sparingly */
+  --color-accent: #d9a45b;
+  --color-accent-deep: #a87f48;
+
+  /* legacy aliases — sections still on the old names inherit the new
+     palette without component edits; rename sweep to follow */
+  --color-cyan: var(--color-accent);
+  --color-blue: var(--color-accent-deep);
+  --color-violet: var(--color-faint);
 
   /* fonts (wired up in layout.tsx) */
   --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;

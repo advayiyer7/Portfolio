@@ -21,11 +21,9 @@ export const site = {
 export const hero = {
   // monospace eyebrow label (currently unused in the hero)
   eyebrow: "CE & CS @ USC · SWE / AI-ML",
-  // big headline — accentWords get the neon glow treatment
-  headline: "I build AI systems that ship — and the engineering behind them.",
-  accentWords: ["AI systems", "engineering"],
+  headline: "I build AI that shows its work.",
   subline:
-    "Computer Engineering & CS senior at USC. I take AI/ML from research to production — LLM agents, RAG pipelines, and the full-stack systems that run them — and I've shipped that work as a software and AI engineer.",
+    "I'm a Computer Engineering & CS senior at USC, graduating in 2027. Lately that means an insight engine over 12,000 rows of supplier spend at Oraczen, entropy-based confidence scores for LLM answers, and GNN task schedulers in Prof. Krishnamachari's lab.",
 } as const;
 
 export const nav = {
