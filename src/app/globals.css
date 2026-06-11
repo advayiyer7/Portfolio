@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   DESIGN SYSTEM — tokens
+   Dark, cinematic "glowing data" aesthetic. Dark mode IS the brand.
+   ========================================================================== */
+
+@theme {
+  /* surfaces */
+  --color-bg: #06070d;
+  --color-bg-elevated: #0b0d18;
+  --color-surface: #10131f;
+  --color-border: #1d2233;
+
+  /* text */
+  --color-fg: #e7ebf4;
+  --color-muted: #8a93a8;
+  --color-faint: #565f73;
+
+  /* accents */
+  --color-cyan: #4de0f0;
+  --color-blue: #5b8cff;
+  --color-violet: #8b5cf6;
+
+  /* fonts (wired up in layout.tsx) */
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* offset for sticky nav when jumping to #anchors */
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: color-mix(in oklab, var(--color-cyan) 30%, transparent);
+  color: #ffffff;
+}
+
+/* nicer focus rings for keyboard nav */
+:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ==========================================================================
+   UTILITIES — backgrounds, glows, gradients
+   ========================================================================== */
+
+@layer utilities {
+  /* subtle dot-grid texture */
+  .bg-dot-grid {
+    background-image: radial-gradient(
+      circle at center,
+      color-mix(in oklab, var(--color-cyan) 9%, transparent) 1px,
+      transparent 1px
+    );
+    background-size: 26px 26px;
+  }
+
+  /* fade a dot-grid out toward the edges so it reads as texture, not pattern */
+  .mask-radial-fade {
+    -webkit-mask-image: radial-gradient(
+      ellipse 80% 60% at 50% 35%,
+      #000 30%,
+      transparent 80%
+    );
+    mask-image: radial-gradient(
+      ellipse 80% 60% at 50% 35%,
+      #000 30%,
+      transparent 80%
+    );
+  }
+
+  /* neon text glow on accent words */
+  .text-glow-cyan {
+    color: var(--color-cyan);
+    text-shadow:
+      0 0 8px color-mix(in oklab, var(--color-cyan) 55%, transparent),
+      0 0 28px color-mix(in oklab, var(--color-cyan) 35%, transparent);
+  }
+  .text-glow-blue {
+    color: var(--color-blue);
+    text-shadow:
+      0 0 8px color-mix(in oklab, var(--color-blue) 55%, transparent),
+      0 0 28px color-mix(in oklab, var(--color-blue) 35%, transparent);
+  }
+
+  /* soft elevation glow on cards / pills */
+  .glow-ring {
+    box-shadow:
+      0 0 0 1px var(--color-border),
+      0 0 24px -8px color-mix(in oklab, var(--color-cyan) 40%, transparent);
+  }
+
+  /* gradient text */
+  .text-gradient {
+    background: linear-gradient(
+      100deg,
+      var(--color-cyan),
+      var(--color-blue) 55%,
+      var(--color-violet)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* monospace metadata label */
+  .label-mono {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.72rem;
+    color: var(--color-muted);
+  }
+
+  /* radial glow blob behind sections */
+  .glow-blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    pointer-events: none;
+    will-change: opacity, transform;
+  }
+
+  .animate-float {
+    animation: float 9s ease-in-out infinite;
+  }
+  .animate-pulse-glow {
+    animation: pulse-glow 4s ease-in-out infinite;
+  }
+  .animate-marquee {
+    animation: marquee 32s linear infinite;
+  }
+
+  /* fade both horizontal edges (used by the stack marquee) */
+  .mask-edges-x {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 8%,
+      #000 92%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 8%,
+      #000 92%,
+      transparent
+    );
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-pulse-glow,
+  .animate-marquee {
+    animation: none !important;
+  }
+}
