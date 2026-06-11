@@ -453,9 +453,113 @@ Python sidecar (FastAPI · dynamic port)
   {
     slug: "menubox-ai",
     title: "MenuBox AI",
-    tagline: "Placeholder description — details soon.",
-    tags: ["AI", "Product"],
-    status: "Details soon",
+    tagline: "Snap a menu or name a restaurant; AI ranks the dishes for your taste using real reviews.",
+    tags: ["React", "FastAPI", "Claude", "PostgreSQL", "Google Places"],
+    status: "Live",
+    logo: "/menubox-logo.png",
+    cover: "/menubox-cover.png",
+    links: [
+      { label: "Live", href: "https://menubox-ai.vercel.app" },
+      { label: "Code", href: "https://github.com/advayiyer7/menubox-ai" },
+    ],
+    detail: {
+      type: "Full-stack AI web app · Recommendations",
+      roleDetail:
+        "Sole developer — product, full-stack implementation, the AI recommendation pipelines, and the entire production deployment across Vercel, Render, and Neon, including the rate-limit, quota, and spend-cap cost defenses.",
+      oneLiner:
+        "Tell it your taste once. Then search any restaurant or upload a menu photo, and it reads the menu, mines Google reviews, and returns ranked picks with a 0–100 match score and a one-line reason.",
+      overview: [
+        "MenuBox AI answers the question you actually have at a restaurant: what should I order? You set a taste profile once — dietary restrictions, favorite cuisines, disliked ingredients, spice level, price preference. For any restaurant, searched by name or uploaded as a menu photo, it analyzes the menu against real customer reviews and your profile, and returns ranked picks, each with a 0–100 match score and the reason it fits you.",
+        "Dietary restrictions are hard constraints, not suggestions: the ranking never recommends a dish that violates them. Under the hood, a FastAPI backend orchestrates Claude (vision OCR, web-search menu lookup, review sentiment, ranking) and Google Places behind authenticated routes, with three layers of cost defense so a public app calling paid AI APIs can't be abused into a runaway bill.",
+      ],
+      features: [
+        {
+          title: "Taste profile",
+          body: "Set once: dietary restrictions (vegetarian, vegan, gluten-free…), favorite cuisines, disliked ingredients, spice level, price preference, and free-text notes.",
+        },
+        {
+          title: "Search a restaurant",
+          body: "Name and location are enough. The app finds it on Google Places, pulls its details and recent reviews, locates the menu, and ranks the best dishes for you.",
+        },
+        {
+          title: "Snap a menu",
+          body: "Upload a photo and Claude Vision reads out the dishes, descriptions, and prices, then cross-references them against Google reviews.",
+        },
+        {
+          title: "Scored picks with reasons",
+          body: "Every recommendation carries a 0–100 match score and a one-line why, like “Highly rated in reviews and fits your vegetarian + mild-spice preference.”",
+        },
+        {
+          title: "Hard dietary constraints",
+          body: "Restrictions are enforced, not weighted — the AI never recommends something that violates them.",
+        },
+        {
+          title: "Real accounts",
+          body: "Email verification before first login, JWT sessions with revocable refresh tokens, and per-user recommendation history.",
+        },
+      ],
+      howItWorks: [
+        {
+          title: "Two recommendation pipelines",
+          body: "Search flow: Google Places finds the restaurant and reviews, Claude locates the menu via web search, then ranks. Photo flow: Claude Vision OCRs the menu, reviews are cross-referenced, then the same ranking runs.",
+        },
+        {
+          title: "Review-grounded ranking",
+          body: "Claude first analyzes the restaurant's Google reviews to find which dishes people actually praise, so the ranking blends crowd signal with your stated preferences instead of guessing from the menu alone.",
+        },
+        {
+          title: "Constrained, structured output",
+          body: "The ranking prompt returns strict JSON: scores and reasons that respect hard constraints (dietary restrictions) while weighing soft signals (reviews, cuisine, spice, price).",
+        },
+        {
+          title: "Auth that gates spend",
+          body: "Registration creates an unverified account and emails a verification link via Brevo; login is blocked until verified. Sessions use short-lived JWT access tokens plus long-lived server-side refresh tokens, refreshed transparently by an Axios interceptor.",
+        },
+        {
+          title: "Three layers of cost defense",
+          body: "IP rate limits on every expensive endpoint (slowapi), durable per-user daily quotas recorded in a usage_events table that survive restarts, and hard provider-level spend caps in the Anthropic and Google consoles as the final backstop.",
+        },
+      ],
+      stackIntro:
+        "A classic two-service stack that runs in production for $0/month. A React + Vite SPA on Vercel calls only its own /api/* routes, which proxy to a FastAPI backend on Render so every API key stays server-side; Neon serverless Postgres holds users, profiles, history, and quotas; Claude handles OCR, review analysis, and ranking; Google Places supplies restaurants and reviews; Brevo sends the verification email.",
+      stack: [
+        { label: "Frontend", items: ["React 19", "Vite 7", "Tailwind CSS 4", "React Router 7", "Axios"] },
+        { label: "Backend", items: ["Python 3.12", "FastAPI", "SQLAlchemy 2", "Pydantic 2"] },
+        { label: "Data & Auth", items: ["PostgreSQL (Neon)", "JWT + refresh tokens", "bcrypt", "slowapi"] },
+        { label: "AI & APIs", items: ["Claude Sonnet 4.6", "Claude Vision (OCR)", "Google Places", "Brevo"] },
+        { label: "Infra", items: ["Vercel", "Render", "Docker", "Monorepo"] },
+      ],
+      architecture: `React + Vite (Vercel) ──/api/* proxy──▶ FastAPI (Render) ──▶ Neon PostgreSQL
+                                              ├──▶ Anthropic Claude  (OCR · reviews · ranking)
+                                              ├──▶ Google Places    (search · reviews)
+                                              └──▶ Brevo            (verification email)`,
+      architectureNotes: [
+        {
+          label: "Frontend",
+          body: "React 19 + Vite SPA on Vercel. It never talks to the AI or Google APIs directly — it calls its own /api/* routes, which Vercel transparently proxies to the backend, so no key ever reaches the browser.",
+        },
+        {
+          label: "Backend",
+          body: "FastAPI + SQLAlchemy 2 on Render. The schema is generated from the ORM models on startup — a fresh database provisions itself on first boot, eliminating hand-written SQL drift.",
+        },
+        {
+          label: "Data & Auth",
+          body: "Neon serverless Postgres; bcrypt-hashed passwords, email verification before first login, short-lived JWT access tokens plus revocable server-side refresh tokens.",
+        },
+        {
+          label: "Cost defense",
+          body: "Three layers: slowapi IP rate limits per endpoint (login 20/min, search 20/hr, recommendations 30/hr), durable per-user daily quotas in a usage_events table, and hard provider spend caps as the ultimate backstop.",
+        },
+        {
+          label: "Deployment",
+          body: "Frontend and backend deploy from one monorepo with different root directories, entirely on free tiers (~$0/month); an uptime ping keeps the free backend warm to mask cold starts.",
+        },
+        {
+          label: "Production hardening",
+          body: "Tightened CORS with explicit origins plus a Vercel-preview regex, DEBUG off in production, secrets injected as host environment variables, and keys verified absent from git history. Notable deploy fixes: Neon's TLS SNI endpoint-ID requirement, Python runtime pinning to 3.12, and idempotent SSL config.",
+        },
+      ],
+    },
   },
 ];
 
