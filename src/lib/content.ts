@@ -175,7 +175,7 @@ export const experience: ExperienceItem[] = [
   },
   {
     role: "Machine Learning Intern",
-    org: "A3",
+    org: "A3 (Evanke)",
     period: "May — Aug 2024",
     summary:
       "Built the initial framework for a logistic multi-classification model — pitched to the Indian government — in Python, and shadowed ML engineers on a neural-network project.",
