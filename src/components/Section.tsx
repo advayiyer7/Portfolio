@@ -24,7 +24,7 @@ export default function Section({
     >
       <Reveal>
         <div className="mb-3 flex items-center gap-3">
-          <span className="label-mono text-cyan/80">{index}</span>
+          <span className="label-mono text-accent/80">{index}</span>
           <span className="h-px w-8 bg-border" />
           <span className="label-mono">{eyebrow}</span>
         </div>

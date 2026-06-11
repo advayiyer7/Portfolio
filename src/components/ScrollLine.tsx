@@ -4,7 +4,7 @@ import { motion, useScroll, useSpring, useTransform, useReducedMotion } from "fr
 
 /**
  * A vertical "throughline" pinned to the left gutter that draws downward as the
- * page scrolls — the leading edge glows. Visible on mobile and desktop.
+ * page scrolls, with a leading dot. Visible on mobile and desktop.
  */
 export default function ScrollLine() {
   const reduced = useReducedMotion();
@@ -27,15 +27,12 @@ export default function ScrollLine() {
       {/* faint full-height track */}
       <div className="absolute inset-0 bg-border/60" />
 
-      {/* glowing progress fill */}
+      {/* progress fill */}
       <motion.div
         style={{ height }}
-        className="absolute inset-x-0 top-0 bg-gradient-to-b from-cyan via-blue to-violet"
+        className="absolute inset-x-0 top-0 bg-gradient-to-b from-accent to-accent-deep"
       >
-        <span
-          className="absolute -bottom-px left-1/2 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-cyan"
-          style={{ boxShadow: "0 0 12px 2px var(--color-cyan)" }}
-        />
+        <span className="absolute -bottom-px left-1/2 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-accent" />
       </motion.div>
     </div>
   );

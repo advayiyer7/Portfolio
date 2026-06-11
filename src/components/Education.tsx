@@ -7,7 +7,7 @@ export default function Education() {
     <Section id="education" index="05" eyebrow="Education" heading={education.heading}>
       <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
         {/* degree card */}
-        <Reveal className="glow-ring rounded-lg border border-border bg-surface/40 p-7">
+        <Reveal className="rounded-lg border border-border bg-surface/40 p-7">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
               <h3 className="font-display text-xl font-semibold tracking-tight">
@@ -22,7 +22,7 @@ export default function Education() {
 
           <div className="mt-6 flex flex-wrap gap-x-10 gap-y-4">
             <div>
-              <p className="font-display text-3xl font-semibold text-glow-cyan">{education.gpa}</p>
+              <p className="font-display text-3xl font-semibold text-accent">{education.gpa}</p>
               <p className="label-mono mt-1">GPA</p>
             </div>
           </div>
@@ -36,7 +36,7 @@ export default function Education() {
             <ul className="space-y-2">
               {education.certifications.map((c) => (
                 <li key={c} className="flex gap-2 text-sm text-fg/85">
-                  <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" />
+                  <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                   {c}
                 </li>
               ))}
@@ -46,12 +46,12 @@ export default function Education() {
 
         {/* coursework */}
         <Reveal delay={0.08} className="rounded-lg border border-border bg-surface/40 p-7">
-          <p className="label-mono mb-4 text-cyan/80">Relevant Coursework</p>
+          <p className="label-mono mb-4 text-accent/80">Relevant Coursework</p>
           <ul className="flex flex-wrap gap-2">
             {education.coursework.map((course) => (
               <li
                 key={course}
-                className="rounded-md border border-border bg-bg/60 px-3 py-1.5 text-sm text-fg/80 transition-colors hover:border-cyan/40 hover:text-cyan"
+                className="rounded-md border border-border bg-bg/60 px-3 py-1.5 text-sm text-fg/80 transition-colors hover:border-accent/40 hover:text-accent"
               >
                 {course}
               </li>

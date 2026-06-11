@@ -10,16 +10,15 @@ const channels = [
 export default function Contact() {
   return (
     <section id="contact" className="relative overflow-hidden scroll-mt-24 py-28 sm:py-36">
-      {/* glow backdrop */}
+      {/* dot-grid backdrop */}
       <div className="pointer-events-none absolute inset-0 bg-dot-grid mask-radial-fade opacity-40" />
-      <div className="glow-blob animate-pulse-glow left-1/2 top-1/2 h-[420px] w-[640px] -translate-x-1/2 -translate-y-1/2 bg-cyan/10" />
 
       <div className="relative mx-auto max-w-6xl px-5 text-center sm:px-8">
         <Reveal>
           <p className="label-mono mb-5 flex items-center justify-center gap-3">
-            <span className="h-px w-8 bg-cyan/60" />
+            <span className="h-px w-8 bg-accent/60" />
             06 / Contact
-            <span className="h-px w-8 bg-cyan/60" />
+            <span className="h-px w-8 bg-accent/60" />
           </p>
         </Reveal>
 
@@ -36,8 +35,7 @@ export default function Contact() {
         <Reveal delay={0.2}>
           <a
             href={`mailto:${site.email}`}
-            className="mt-9 inline-block rounded-full bg-cyan px-8 py-3.5 text-sm font-semibold text-bg transition-transform hover:scale-[1.03]"
-            style={{ boxShadow: "0 0 34px -4px var(--color-cyan)" }}
+            className="mt-9 inline-block rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-bg transition-transform hover:scale-[1.03]"
           >
             {site.email}
           </a>
@@ -51,9 +49,9 @@ export default function Contact() {
                   href={c.href}
                   target={c.href.startsWith("http") ? "_blank" : undefined}
                   rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="block rounded-xl border border-border bg-surface/40 px-4 py-4 transition-all duration-300 hover:border-cyan/45 hover:shadow-[0_0_24px_-8px_var(--color-cyan)]"
+                  className="block rounded-xl border border-border bg-surface/40 px-4 py-4 transition-all duration-300 hover:border-accent/45"
                 >
-                  <span className="label-mono block text-cyan/80">{c.label}</span>
+                  <span className="label-mono block text-accent/80">{c.label}</span>
                   <span className="mt-1 block text-sm text-fg/85">{c.value}</span>
                 </a>
               </li>

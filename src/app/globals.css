@@ -2,7 +2,7 @@
 
 /* ==========================================================================
    DESIGN SYSTEM — tokens
-   Dark, cinematic "glowing data" aesthetic. Dark mode IS the brand.
+   Warm graphite surfaces, bone text, one amber accent. Dark mode IS the brand.
    ========================================================================== */
 
 @theme {
@@ -20,12 +20,6 @@
   /* accent — one color, used sparingly */
   --color-accent: #d9a45b;
   --color-accent-deep: #a87f48;
-
-  /* legacy aliases — sections still on the old names inherit the new
-     palette without component edits; rename sweep to follow */
-  --color-cyan: var(--color-accent);
-  --color-blue: var(--color-accent-deep);
-  --color-violet: var(--color-faint);
 
   /* fonts (wired up in layout.tsx) */
   --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
@@ -57,13 +51,13 @@ body {
 }
 
 ::selection {
-  background-color: color-mix(in oklab, var(--color-cyan) 30%, transparent);
+  background-color: color-mix(in oklab, var(--color-accent) 30%, transparent);
   color: #ffffff;
 }
 
 /* nicer focus rings for keyboard nav */
 :focus-visible {
-  outline: 2px solid var(--color-cyan);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -75,7 +69,7 @@ body {
 }
 
 /* ==========================================================================
-   UTILITIES — backgrounds, glows, gradients
+   UTILITIES — backgrounds, labels, masks
    ========================================================================== */
 
 @layer utilities {
@@ -83,7 +77,7 @@ body {
   .bg-dot-grid {
     background-image: radial-gradient(
       circle at center,
-      color-mix(in oklab, var(--color-cyan) 9%, transparent) 1px,
+      color-mix(in oklab, var(--color-accent) 9%, transparent) 1px,
       transparent 1px
     );
     background-size: 26px 26px;
@@ -103,40 +97,6 @@ body {
     );
   }
 
-  /* neon text glow on accent words */
-  .text-glow-cyan {
-    color: var(--color-cyan);
-    text-shadow:
-      0 0 8px color-mix(in oklab, var(--color-cyan) 55%, transparent),
-      0 0 28px color-mix(in oklab, var(--color-cyan) 35%, transparent);
-  }
-  .text-glow-blue {
-    color: var(--color-blue);
-    text-shadow:
-      0 0 8px color-mix(in oklab, var(--color-blue) 55%, transparent),
-      0 0 28px color-mix(in oklab, var(--color-blue) 35%, transparent);
-  }
-
-  /* soft elevation glow on cards / pills */
-  .glow-ring {
-    box-shadow:
-      0 0 0 1px var(--color-border),
-      0 0 24px -8px color-mix(in oklab, var(--color-cyan) 40%, transparent);
-  }
-
-  /* gradient text */
-  .text-gradient {
-    background: linear-gradient(
-      100deg,
-      var(--color-cyan),
-      var(--color-blue) 55%,
-      var(--color-violet)
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
   /* monospace metadata label */
   .label-mono {
     font-family: var(--font-mono);
@@ -146,21 +106,6 @@ body {
     color: var(--color-muted);
   }
 
-  /* radial glow blob behind sections */
-  .glow-blob {
-    position: absolute;
-    border-radius: 9999px;
-    filter: blur(80px);
-    pointer-events: none;
-    will-change: opacity, transform;
-  }
-
-  .animate-float {
-    animation: float 9s ease-in-out infinite;
-  }
-  .animate-pulse-glow {
-    animation: pulse-glow 4s ease-in-out infinite;
-  }
   .animate-marquee {
     animation: marquee 32s linear infinite;
   }
@@ -193,29 +138,7 @@ body {
   }
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-14px);
-  }
-}
-
-@keyframes pulse-glow {
-  0%,
-  100% {
-    opacity: 0.55;
-  }
-  50% {
-    opacity: 0.9;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .animate-float,
-  .animate-pulse-glow,
   .animate-marquee {
     animation: none !important;
   }

@@ -10,14 +10,14 @@ export default function Skills() {
           <Reveal
             key={group.category}
             delay={(gi % 3) * 0.07}
-            className="group rounded-lg border border-border bg-surface/40 p-6 transition-colors duration-300 hover:border-cyan/40"
+            className="group rounded-lg border border-border bg-surface/40 p-6 transition-colors duration-300 hover:border-accent/40"
           >
-            <h3 className="label-mono mb-4 text-cyan/80">{group.category}</h3>
+            <h3 className="label-mono mb-4 text-accent/80">{group.category}</h3>
             <ul className="flex flex-wrap gap-2">
               {group.items.map((item) => (
                 <li
                   key={item}
-                  className="rounded-md border border-border bg-bg/60 px-3 py-1.5 text-sm text-fg/85 transition-all duration-300 hover:border-cyan/50 hover:text-cyan hover:shadow-[0_0_18px_-6px_var(--color-cyan)]"
+                  className="rounded-md border border-border bg-bg/60 px-3 py-1.5 text-sm text-fg/85 transition-all duration-300 hover:border-accent/50 hover:text-accent"
                 >
                   {item}
                 </li>

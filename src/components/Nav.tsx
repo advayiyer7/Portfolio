@@ -101,8 +101,7 @@ export default function Nav() {
                         />
                         <motion.span
                           layoutId="nav-tick"
-                          className="absolute -top-1 left-1/2 h-[2px] w-4 -translate-x-1/2 rounded-full bg-cyan"
-                          style={{ boxShadow: "0 0 8px var(--color-cyan)" }}
+                          className="absolute -top-1 left-1/2 h-[2px] w-4 -translate-x-1/2 rounded-full bg-accent"
                         />
                       </>
                     )}
@@ -125,7 +124,7 @@ export default function Nav() {
               className="group flex items-center gap-1 font-mono text-[0.7rem] uppercase tracking-[0.1em] text-muted transition-colors hover:text-fg"
             >
               {l.label}
-              <ArrowUpRight className="text-faint transition-colors group-hover:text-cyan" />
+              <ArrowUpRight className="text-faint transition-colors group-hover:text-accent" />
             </a>
           ))}
         </div>
@@ -174,7 +173,7 @@ export default function Nav() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setOpen(false)}
-                    className="flex items-center gap-1 font-mono text-xs uppercase tracking-[0.12em] text-fg transition-colors hover:text-cyan"
+                    className="flex items-center gap-1 font-mono text-xs uppercase tracking-[0.12em] text-fg transition-colors hover:text-accent"
                   >
                     {l.label}
                     <ArrowUpRight />

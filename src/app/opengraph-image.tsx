@@ -16,10 +16,10 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          backgroundColor: "#06070D",
+          backgroundColor: "#121110",
           backgroundImage:
-            "radial-gradient(circle at 20% 20%, rgba(91,140,255,0.18), transparent 45%), radial-gradient(circle at 85% 80%, rgba(139,92,246,0.16), transparent 45%)",
-          color: "#E7EBF4",
+            "radial-gradient(circle at 20% 20%, rgba(217,164,91,0.12), transparent 45%), radial-gradient(circle at 85% 80%, rgba(168,127,72,0.10), transparent 45%)",
+          color: "#EAE6DD",
           fontFamily: "sans-serif",
         }}
       >
@@ -28,7 +28,7 @@ export default function OpengraphImage() {
             display: "flex",
             alignItems: "center",
             gap: 16,
-            color: "#4DE0F0",
+            color: "#D9A45B",
             fontSize: 26,
             letterSpacing: 6,
             textTransform: "uppercase",
@@ -38,9 +38,7 @@ export default function OpengraphImage() {
             style={{
               width: 14,
               height: 14,
-              borderRadius: 99,
-              backgroundColor: "#4DE0F0",
-              boxShadow: "0 0 24px 4px #4DE0F0",
+              backgroundColor: "#D9A45B",
             }}
           />
           CE &amp; CS @ USC
@@ -59,7 +57,7 @@ export default function OpengraphImage() {
           {site.name}
         </div>
 
-        <div style={{ display: "flex", fontSize: 40, color: "#8A93A8", marginTop: 24, maxWidth: 920 }}>
+        <div style={{ display: "flex", fontSize: 40, color: "#A09885", marginTop: 24, maxWidth: 920 }}>
           {hero.headline}
         </div>
 
@@ -70,7 +68,7 @@ export default function OpengraphImage() {
             height: 5,
             width: 360,
             borderRadius: 99,
-            background: "linear-gradient(90deg,#4DE0F0,#5B8CFF,#8B5CF6)",
+            background: "linear-gradient(90deg,#D9A45B,#A87F48)",
           }}
         />
       </div>

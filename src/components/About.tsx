@@ -23,7 +23,7 @@ export default function About() {
                   i > 0 ? "lg:border-t lg:border-border" : ""
                 }`}
               >
-                <dd className="font-display text-3xl font-semibold text-glow-cyan lg:text-4xl">
+                <dd className="font-display text-3xl font-semibold text-accent lg:text-4xl">
                   {s.value}
                 </dd>
                 <dt className="label-mono lg:text-right">{s.label}</dt>

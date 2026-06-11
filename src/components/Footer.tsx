@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className="border-t border-border/70">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-5 px-5 py-10 sm:flex-row sm:px-8">
         <div className="flex items-center gap-2.5">
-          <span className="inline-block h-2 w-2 rounded-full bg-cyan shadow-[0_0_10px_2px_var(--color-cyan)]" />
+          <span className="inline-block h-2 w-2 rounded-full bg-accent" />
           <span className="font-display text-sm font-semibold tracking-tight">{site.name}</span>
           <span className="label-mono">© {year}</span>
         </div>
@@ -25,7 +25,7 @@ export default function Footer() {
               href={l.href}
               target={l.href.startsWith("http") ? "_blank" : undefined}
               rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="label-mono transition-colors hover:text-cyan"
+              className="label-mono transition-colors hover:text-accent"
             >
               {l.label}
             </a>

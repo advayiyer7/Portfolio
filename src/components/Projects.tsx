@@ -7,9 +7,9 @@ import Section from "./Section";
 import { projects, type Project } from "@/lib/content";
 
 const statusStyle: Record<Project["status"], string> = {
-  "In progress": "text-cyan border-cyan/40 bg-cyan/5",
+  "In progress": "text-accent-deep border-accent-deep/40 bg-accent-deep/5",
   "Details soon": "text-muted border-border bg-bg/50",
-  Live: "text-violet border-violet/40 bg-violet/5",
+  Live: "text-accent border-accent/40 bg-accent/5",
 };
 
 function Card({ project, index }: { project: Project; index: number }) {
@@ -23,13 +23,8 @@ function Card({ project, index }: { project: Project; index: number }) {
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.55, ease: [0.22, 0.61, 0.36, 1], delay: (index % 2) * 0.08 }}
       whileHover={reduced ? undefined : { y: -6 }}
-      className="group relative flex flex-col overflow-hidden rounded-lg border border-border bg-surface/40 p-7 transition-colors duration-300 hover:border-cyan/45"
+      className="group relative flex flex-col overflow-hidden rounded-lg border border-border bg-surface/40 p-7 transition-colors duration-300 hover:border-accent/45"
     >
-      {/* hover glow wash */}
-      <div className="pointer-events-none absolute -inset-px rounded-lg opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-        <div className="glow-blob right-[-20%] top-[-30%] h-48 w-48 bg-cyan/15" />
-      </div>
-
       {/* thumbnail — cover screenshot if present, else placeholder */}
       <ThumbWrap href={href} title={project.title}>
         <div className="relative aspect-[16/9] overflow-hidden rounded-md border border-border bg-bg/60">
@@ -53,7 +48,7 @@ function Card({ project, index }: { project: Project; index: number }) {
         <div className="mb-2 flex items-center justify-between gap-3">
           <h3 className="font-display text-xl font-semibold tracking-tight">
             {href ? (
-              <Link href={href} className="transition-colors hover:text-cyan">
+              <Link href={href} className="transition-colors hover:text-accent">
                 {project.title}
               </Link>
             ) : (
@@ -83,7 +78,7 @@ function Card({ project, index }: { project: Project; index: number }) {
           {href && (
             <Link
               href={href}
-              className="font-mono text-xs uppercase tracking-wide text-cyan transition-colors hover:text-fg"
+              className="font-mono text-xs uppercase tracking-wide text-accent transition-colors hover:text-fg"
             >
               Case study →
             </Link>
@@ -95,7 +90,7 @@ function Card({ project, index }: { project: Project; index: number }) {
                   href={l.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-xs uppercase tracking-wide text-fg transition-colors hover:text-cyan"
+                  className="font-mono text-xs uppercase tracking-wide text-fg transition-colors hover:text-accent"
                 >
                   {l.label} ↗
                 </a>

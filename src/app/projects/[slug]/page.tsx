@@ -44,7 +44,7 @@ function Block({
     <section className="border-t border-border/50 py-14 sm:py-16">
       <Reveal>
         <div className="mb-7 flex items-center gap-3">
-          <span className="label-mono text-cyan/80">{index}</span>
+          <span className="label-mono text-accent/80">{index}</span>
           <span className="h-px w-8 bg-border" />
           <span className="label-mono">{label}</span>
         </div>
@@ -93,8 +93,6 @@ export default async function ProjectPage({ params }: Params) {
         {/* hero */}
         <section className="relative overflow-hidden px-5 py-16 sm:px-8 sm:py-20">
           <div className="pointer-events-none absolute inset-0 bg-dot-grid mask-radial-fade opacity-50" />
-          <div className="glow-blob animate-pulse-glow left-[8%] top-0 h-72 w-72 bg-cyan/15" />
-          <div className="glow-blob animate-pulse-glow right-[6%] top-[20%] h-72 w-72 bg-violet/15" style={{ animationDelay: "1.5s" }} />
 
           <div className="relative mx-auto max-w-5xl">
             <Reveal>
@@ -131,10 +129,9 @@ export default async function ProjectPage({ params }: Params) {
                     rel="noopener noreferrer"
                     className={
                       i === 0
-                        ? "rounded-full bg-cyan px-6 py-2.5 text-sm font-semibold text-bg transition-transform hover:scale-[1.03]"
-                        : "rounded-full border border-border bg-surface/60 px-6 py-2.5 text-sm font-medium text-fg backdrop-blur transition-colors hover:border-cyan/50 hover:text-cyan"
+                        ? "rounded-full bg-accent px-6 py-2.5 text-sm font-semibold text-bg transition-transform hover:scale-[1.03]"
+                        : "rounded-full border border-border bg-surface/60 px-6 py-2.5 text-sm font-medium text-fg backdrop-blur transition-colors hover:border-accent/50 hover:text-accent"
                     }
-                    style={i === 0 ? { boxShadow: "0 0 28px -4px var(--color-cyan)" } : undefined}
                   >
                     {l.label === "Live" ? "View Live" : l.label} {l.label === "Download" ? "↓" : "↗"}
                   </a>
@@ -160,7 +157,7 @@ export default async function ProjectPage({ params }: Params) {
               {d.features.map((f) => (
                 <div
                   key={f.title}
-                  className="rounded-lg border border-border bg-surface/30 p-5 transition-colors duration-300 hover:border-cyan/40"
+                  className="rounded-lg border border-border bg-surface/30 p-5 transition-colors duration-300 hover:border-accent/40"
                 >
                   <h3 className="font-display text-lg font-semibold tracking-tight">{f.title}</h3>
                   <p className="mt-2 leading-relaxed text-muted">{f.body}</p>
@@ -174,7 +171,7 @@ export default async function ProjectPage({ params }: Params) {
               {d.howItWorks.map((h, i) => (
                 <div key={h.title} className="rounded-lg border border-border bg-surface/30 p-5">
                   <div className="flex items-baseline gap-3">
-                    <span className="font-mono text-xs text-cyan/70">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="font-mono text-xs text-accent/70">{String(i + 1).padStart(2, "0")}</span>
                     <h3 className="font-display text-lg font-semibold tracking-tight">{h.title}</h3>
                   </div>
                   <p className="mt-2 leading-relaxed text-muted">{h.body}</p>
@@ -204,7 +201,7 @@ export default async function ProjectPage({ params }: Params) {
             <dl className="mt-5 grid gap-3 sm:grid-cols-2">
               {d.architectureNotes.map((n) => (
                 <div key={n.label} className="rounded-lg border border-border bg-surface/30 p-4">
-                  <dt className="label-mono text-cyan/80">{n.label}</dt>
+                  <dt className="label-mono text-accent/80">{n.label}</dt>
                   <dd className="mt-1.5 text-sm leading-relaxed text-muted">{n.body}</dd>
                 </div>
               ))}
@@ -220,7 +217,7 @@ export default async function ProjectPage({ params }: Params) {
                   href={l.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-xs uppercase tracking-wide text-fg transition-colors hover:text-cyan"
+                  className="font-mono text-xs uppercase tracking-wide text-fg transition-colors hover:text-accent"
                 >
                   {l.label} ↗
                 </a>

@@ -45,7 +45,7 @@ export default function SocialIcons({ className = "" }: { className?: string }) 
             title={l.label}
             target={l.external ? "_blank" : undefined}
             rel={l.external ? "noopener noreferrer" : undefined}
-            className="flex h-9 w-9 items-center justify-center rounded-md border border-border bg-surface/40 text-muted transition-all duration-300 hover:border-cyan/50 hover:text-cyan hover:shadow-[0_0_18px_-6px_var(--color-cyan)]"
+            className="flex h-9 w-9 items-center justify-center rounded-md border border-border bg-surface/40 text-muted transition-all duration-300 hover:border-accent/50 hover:text-accent"
           >
             <svg viewBox="0 0 24 24" fill="currentColor" className="h-[18px] w-[18px]" aria-hidden="true">
               {l.path}
