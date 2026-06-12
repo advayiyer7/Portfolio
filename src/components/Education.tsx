@@ -22,8 +22,12 @@ export default function Education() {
 
           <div className="mt-6 flex flex-wrap gap-x-10 gap-y-4">
             <div>
+              <p className="font-display text-3xl font-semibold text-accent">{education.gpaCurrent}</p>
+              <p className="label-mono mt-1">Current GPA</p>
+            </div>
+            <div>
               <p className="font-display text-3xl font-semibold text-accent">{education.gpa}</p>
-              <p className="label-mono mt-1">GPA</p>
+              <p className="label-mono mt-1">Cumulative GPA</p>
             </div>
           </div>
 
