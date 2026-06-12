@@ -23,7 +23,7 @@ export const hero = {
   eyebrow: "CE & CS @ USC · SWE / AI-ML",
   headline: "I build AI that shows its work.",
   subline:
-    "I'm a Computer Engineering & CS senior at USC, class of 2027. Right now I'm an AI engineer intern at Oraczen, building agentic procurement tools like an insight engine over 12,000 rows of supplier spend. Before that I shipped a client-facing RAG web app at Publicis Sapient, and on my own time I've launched three AI products you can use today: Facet, Tek, and MenuBox AI.",
+    "I'm a Computer Engineering & CS senior at USC, class of 2027. I've shipped multiple AI products, including Facet, Tek, MenuBox AI, and MILO, plus RAG apps for clients like Bridgestone and Clarios at Publicis Sapient. Right now I'm at Oraczen, building agentic procurement AI for enterprises with $1B+ in annual spend.",
 } as const;
 
 export const nav = {
@@ -41,8 +41,9 @@ export const nav = {
 export const about = {
   heading: "About",
   body: [
-    "Senior at USC studying Computer Engineering & Computer Science (graduating 2027), focused on AI/ML systems and full-stack engineering.",
-    "I build LLM agents and RAG applications along with the systems plumbing underneath them — from an OS-level, local-first desktop AI agent to Milo, an investing bot that tracks your portfolio and pings you on iMessage or Telegram when a position nears its stop-loss — and I've shipped production work as a software engineering intern and AI engineer.",
+    "Hi, I'm Advay, a Computer Engineering & Computer Science senior at USC, graduating in 2027. I like building AI products people can actually use, and I've shipped multiple: Facet, an AI jewelry design studio; Tek, a local-first desktop agent for your files; MenuBox AI, a menu recommendation app; and MILO, an investing bot that watches your portfolio and pings you near stop-loss.",
+    "I've also shipped AI in production for real companies. At Publicis Sapient I built RAG applications for enterprise clients, notably Bridgestone and Clarios, owning everything from requirements and prompt engineering to the stakeholder demo. Currently I work at Oraczen, building agentic AI for procurement, whose clients include enterprises managing $1B+ in annual spend: a multi-tier insight engine over supplier and spend data, and agent-to-agent transaction workflows.",
+    "Beyond shipping, I want to understand models, not just use them. Lately that's meant digging into how transformers use their context windows, confidence scoring for LLM answers via entropy over answer-localized logprobs, and lightweight probes on model internals, alongside my GNN task-scheduling research with Prof. Krishnamachari at USC.",
   ],
   stats: [
     { value: "3.94", label: "GPA / 4.00" },
