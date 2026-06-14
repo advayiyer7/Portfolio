@@ -60,7 +60,7 @@ export type SkillGroup = {
 export const skills: SkillGroup[] = [
   {
     category: "Languages",
-    items: ["Python", "Java", "C++", "C", "JavaScript", "TypeScript", "SQL", "MATLAB"],
+    items: ["Python", "Java", "C++", "JavaScript", "TypeScript", "SQL"],
   },
   {
     category: "Web",
@@ -81,6 +81,8 @@ export const skills: SkillGroup[] = [
       "MySQL",
       "MongoDB",
       "Redis",
+      "Memcached",
+      "DiskCache",
       "Qdrant",
       "LanceDB",
     ],
@@ -89,7 +91,7 @@ export const skills: SkillGroup[] = [
     category: "Cloud & DevOps",
     items: [
       "AWS (EC2 · S3 · API Gateway · Amplify · IAM)",
-      "GCP / Azure",
+      "Azure",
       "Docker",
       "Git / GitHub",
       "GitHub Actions (CI/CD)",
