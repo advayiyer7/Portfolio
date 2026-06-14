@@ -23,7 +23,7 @@ export const hero = {
   eyebrow: "CE & CS @ USC · SWE / AI-ML",
   headline: "I build AI that shows its work.",
   subline:
-    "I'm a Computer Engineering & CS senior at USC, class of 2027. I've shipped multiple AI products, including Facet, Tek, and MenuBox AI, plus RAG apps for clients like Bridgestone and Clarios at Publicis Sapient, and I'm currently building MILO, an investing bot. Right now I'm at Oraczen, building agentic procurement AI for enterprises with $1B+ in annual spend.",
+    "I'm a Computer Engineering & CS senior at USC, class of 2027. I've shipped multiple AI products, including Facet, Tek, and MenuBox AI, plus RAG apps for large enterprise clients at Publicis Sapient, and I'm currently building MILO, an investing bot. Right now I'm at Oraczen, building agentic procurement AI for enterprises with $1B+ in annual spend.",
 } as const;
 
 export const nav = {
@@ -41,12 +41,13 @@ export const nav = {
 export const about = {
   heading: "About",
   body: [
-    "Hi, I'm Advay, a Computer Engineering & Computer Science senior at USC, graduating in 2027 with a 3.94 cumulative GPA (4.0 this year). I'm passionate about software development and the responsible deployment of ML and generative AI, and I like building products people can actually use. I've shipped multiple: Facet, an AI jewelry design studio; Tek, a local-first desktop agent for your files; and MenuBox AI, a menu recommendation app. Right now I'm building MILO, an investing bot that watches your portfolio, provides regular updates, and pings you near stop-loss.",
-    "I've also shipped AI in production for real companies. At Publicis Sapient I built RAG applications for enterprise clients, notably Bridgestone and Clarios, owning everything from requirements and prompt engineering to the stakeholder demo. Currently I work at Oraczen, building agentic AI for procurement, whose clients include enterprises managing $1B+ in annual spend: a multi-tier insight engine over supplier and spend data, and agent-to-agent transaction workflows.",
+    "Hi, I'm Advay, a Computer Engineering & Computer Science senior at USC, graduating in 2027 with a 3.94 cumulative GPA. I'm passionate about software development and the responsible deployment of ML and generative AI, and I like building products people can actually use. I've shipped multiple: Facet, an AI jewelry design studio; Tek, a local-first desktop agent for your files; and MenuBox AI, a menu recommendation app. Right now I'm building MILO, an investing bot that watches your portfolio, provides regular updates, and pings you near stop-loss.",
+    "I've also shipped AI in production for real companies. At Publicis Sapient I built RAG applications for large enterprise clients, owning everything from requirements and prompt engineering to the stakeholder demo. Currently I work at Oraczen, building agentic AI for procurement, whose clients include enterprises managing $1B+ in annual spend: a multi-tier insight engine over supplier and spend data, and agent-to-agent transaction workflows.",
     "Beyond shipping, I want to understand models, not just use them. Lately that's meant digging into how transformers use their context windows, confidence scoring for LLM answers via entropy over answer-localized logprobs, and lightweight probes on model internals, alongside my GNN task-scheduling research with Prof. Krishnamachari at USC. Outside of engineering, I lead Calculus II supplemental instruction at USC, and I unwind with sports and gaming.",
   ],
   stats: [
-    { value: "3.94", label: "GPA / 4.00" },
+    { value: "4.0", label: "Current GPA" },
+    { value: "3.94", label: "Cumulative GPA" },
     { value: "2027", label: "B.S. CE + CS" },
     { value: "6×", label: "Dean's List" },
   ],
