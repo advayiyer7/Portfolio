@@ -4,7 +4,7 @@ import { education } from "@/lib/content";
 
 export default function Education() {
   return (
-    <Section id="education" index="05" eyebrow="Education" heading={education.heading}>
+    <Section id="education" index="04" eyebrow="Education" heading={education.heading}>
       <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
         {/* degree card */}
         <Reveal className="rounded-lg border border-border bg-surface/40 p-7">

@@ -4,7 +4,7 @@ import { skills } from "@/lib/content";
 
 export default function Skills() {
   return (
-    <Section id="skills" index="03" eyebrow="Skills" heading="The toolkit.">
+    <Section id="skills" index="02" eyebrow="Skills" heading="The toolkit.">
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {skills.map((group, gi) => (
           <Reveal

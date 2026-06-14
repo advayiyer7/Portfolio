@@ -17,7 +17,7 @@ export default function Contact() {
         <Reveal>
           <p className="label-mono mb-5 flex items-center justify-center gap-3">
             <span className="h-px w-8 bg-accent/60" />
-            06 / Contact
+            05 / Contact
             <span className="h-px w-8 bg-accent/60" />
           </p>
         </Reveal>

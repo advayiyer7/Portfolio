@@ -125,7 +125,7 @@ function ThumbWrap({
 
 export default function Projects() {
   return (
-    <Section id="projects" index="04" eyebrow="Projects" heading="Selected work.">
+    <Section id="projects" index="03" eyebrow="Projects" heading="Selected work.">
       <div className="grid gap-6 sm:grid-cols-2">
         {projects.map((p, i) => (
           <Card key={p.slug} project={p} index={i} />

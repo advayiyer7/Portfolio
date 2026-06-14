@@ -4,7 +4,7 @@ import { experience } from "@/lib/content";
 
 export default function Experience() {
   return (
-    <Section id="experience" index="02" eyebrow="Experience" heading="The path so far.">
+    <Section id="experience" index="01" eyebrow="Experience" heading="The path so far.">
       <ol className="relative">
         {/* vertical track */}
         <span
