@@ -353,7 +353,7 @@ export const projects: Project[] = [
     detail: {
       type: "Cross-platform desktop app · Local-first AI",
       roleDetail:
-        "Sole developer — I designed the trust-boundary architecture, built the local hybrid-retrieval pipeline, the Electron + Python desktop app, the eval-first test harness, and the cross-platform packaging and CI.",
+        "Sole developer. I designed the three-process trust-boundary architecture, built the local hybrid-retrieval pipeline (vector + BM25 + reciprocal-rank fusion + cross-encoder rerank), the Electron + Python desktop app, and the cross-platform packaging and CI. I worked eval-first — a committed retrieval harness gated every change, later hardened into a 148-probe adversarial stress eval — and kept a dated decision log for every architectural call.",
       oneLiner:
         "A downloadable desktop app that indexes your folders on-device, lets you semantically search and chat with your files, and performs file actions behind a preview you approve — nothing ever leaves your machine.",
       overview: [
@@ -404,8 +404,12 @@ export const projects: Project[] = [
           body: "The local model rewrites follow-ups into standalone queries — “and where are the winter tires?” resolves against the conversation.",
         },
         {
-          title: "Eval-first, and measured",
-          body: "A committed test harness gates every change: 19/19 probes return the correct file top-1, 2/2 adversarial negatives return nothing, at ~190ms/query on CPU — identical on Windows, macOS, and Linux in CI.",
+          title: "Measured against an adversarial eval",
+          body: "A committed stress eval throws 148 hostile probes at the pipeline — confusable clusters, near-duplicate versions, buried needles, typos, and zero-keyword paraphrases. It holds 82.4% top-1 (recall@5 84.5%, MRR 0.83), and 87.5% of genuinely unanswerable queries correctly return nothing. Accuracy stays flat from 214 to 24,090 chunks — past the point the approximate index kicks in.",
+        },
+        {
+          title: "Ships with zero prerequisites",
+          body: "Every installer bundles its own CPython runtime and bootstraps on first launch, so users install nothing. Cross-platform CI rebuilds and re-runs the full retrieval eval on Windows, macOS, and Linux on every push — with identical scores, and the release artifacts are the exact bytes that passed.",
         },
       ],
       stackIntro:
