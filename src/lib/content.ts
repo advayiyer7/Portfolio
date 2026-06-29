@@ -15,7 +15,7 @@ export const site = {
   email: "advayiyer7@gmail.com",
   github: "https://github.com/advayiyer7",
   linkedin: "https://www.linkedin.com/in/advayiyer7",
-  resume: "/resume.pdf", // TODO: replace with hosted resume PDF URL
+  resume: "/resume.pdf",
 } as const;
 
 export const hero = {
@@ -23,7 +23,7 @@ export const hero = {
   eyebrow: "CE & CS @ USC · SWE / AI-ML",
   headline: "I build AI that shows its work.",
   subline:
-    "I'm a Computer Engineering & CS senior at USC, class of 2027. I've shipped multiple AI products, including Facet, Tek, and MenuBox AI, plus RAG apps for large enterprise clients at Publicis Sapient, and I'm currently building MILO, an investing bot. Right now I'm at Oraczen, building agentic procurement AI for enterprises with $1B+ in annual spend.",
+    "I'm a Computer Engineering & CS senior at USC, class of 2027. I've shipped multiple AI products — Semantic LLM Cache, Facet, Tek, and MenuBox AI — plus a full-stack AI product for a global manufacturer at Publicis Sapient, and I'm building MILO, an investing bot. Right now I'm at Oraczen, building agentic procurement AI for enterprises with $1B+ in annual spend.",
 } as const;
 
 export const nav = {
@@ -41,8 +41,8 @@ export const nav = {
 export const about = {
   heading: "About",
   body: [
-    "Hi, I'm Advay, a Computer Engineering & Computer Science senior at USC, graduating in 2027 with a 3.94 cumulative GPA. I'm passionate about software development and the responsible deployment of ML and generative AI, and I like building products people can actually use. I've shipped multiple: Facet, an AI jewelry design studio; Tek, a local-first desktop agent for your files; and MenuBox AI, a menu recommendation app. Right now I'm building MILO, an investing bot that watches your portfolio, provides regular updates, and pings you near stop-loss.",
-    "I've also shipped AI in production for real companies. At Publicis Sapient I built RAG applications for large enterprise clients, owning everything from requirements and prompt engineering to the stakeholder demo. Currently I work at Oraczen, building agentic AI for procurement, whose clients include enterprises managing $1B+ in annual spend: a multi-tier insight engine over supplier and spend data, and agent-to-agent transaction workflows.",
+    "Hi, I'm Advay, a Computer Engineering & Computer Science senior at USC, graduating in 2027 with a 3.94 cumulative GPA. I'm passionate about software development and the responsible deployment of ML and generative AI, and I like building products people can actually use. I've shipped multiple: Semantic LLM Cache, a drop-in caching proxy for LLM APIs; Facet, an AI jewelry design studio; Tek, a local-first desktop agent for your files; and MenuBox AI, a menu recommendation app. Right now I'm building MILO, an investing bot that watches your portfolio, provides regular updates, and pings you near stop-loss.",
+    "I've also shipped AI for real companies. At Publicis Sapient I shipped a full-stack AI battery-recommendation product for a global automotive manufacturer as the sole intern, owning the React / AWS front end and a Python / FastAPI service end to end. Currently I work at Oraczen, building agentic AI for procurement: a multi-tier insight engine that surfaced 16 of 17 analyst-validated insights from a $2.3B supplier dataset — vs 1 of 17 for a brute-force LLM baseline — at ~3× lower cost, plus a log-probability confidence scorer and agent-to-agent transaction workflows.",
     "Beyond shipping, I want to understand models, not just use them. Lately that's meant digging into how transformers use their context windows, confidence scoring for LLM answers via entropy over answer-localized logprobs, and lightweight probes on model internals, alongside my GNN task-scheduling research with Prof. Krishnamachari at USC. Outside of engineering, I lead Calculus II supplemental instruction at USC, and I unwind with sports and gaming.",
   ],
   stats: [
@@ -144,11 +144,21 @@ export const experience: ExperienceItem[] = [
   {
     role: "AI Engineer Intern",
     org: "Oraczen",
-    period: "2025 — Present",
+    location: "Los Angeles, CA",
+    period: "May — Jul 2026",
     current: true,
     summary:
-      "Building agentic AI for procurement — a multi-tier insight engine over supplier/spend data and agent-to-agent transaction workflows.",
-    tags: ["LLM Agents", "RAG", "Python"],
+      "Agentic AI for enterprise procurement. Built a multi-tier insight engine (deterministic spend detectors → LLM narrator → agentic explorer) that surfaced 16 of 17 analyst-validated insights from a $2.3B, 12K-row supplier dataset — vs 1 of 17 for a brute-force LLM baseline — at ~3× lower cost, plus a log-probability confidence scorer (98% accuracy, ~92% less human review) and an agent-to-agent procurement protocol stack.",
+    tags: ["LLM Agents", "Python", "Procurement AI"],
+  },
+  {
+    role: "Software Engineer Intern",
+    org: "Publicis Sapient",
+    location: "Chicago, IL",
+    period: "Jun — Aug 2025",
+    summary:
+      "Shipped a full-stack AI battery-recommendation product for a global automotive battery manufacturer as the sole intern — owning the React / AWS Amplify front end and a Python / FastAPI service on EC2 end to end, with a database-lookup + web-scraping fallback pipeline and a Memcached → ElastiCache layer that eliminated redundant, billable data-provider calls.",
+    tags: ["React", "FastAPI", "AWS"],
   },
   {
     role: "Undergraduate Researcher",
@@ -156,34 +166,25 @@ export const experience: ExperienceItem[] = [
     period: "Sep 2025 — Present",
     current: true,
     summary:
-      "Scheduling algorithms for distributed computing — HEFT-based theory plus Graph Neural Networks to predict and recommend optimal schedulers.",
+      "Building GNN-based schedulers for distributed-computing task graphs — training graph convolutional networks on the SAGA library to predict the optimal scheduling algorithm (HEFT and variants) per workload, benchmarked against adversarial problem generators and parametric schedulers.",
     tags: ["GNNs", "Distributed Systems", "Research"],
   },
   {
-    role: "Software Engineer Intern",
-    org: "Publicis Sapient",
-    location: "Chicago",
-    period: "Jun — Aug 2025",
+    role: "Machine Learning Intern",
+    org: "A3 Transforms India",
+    period: "May — Aug 2024",
     summary:
-      "Built an AI-powered web app with a RAG pipeline (GPT-4 + retrieval) for a client. Owned requirements, prompt engineering, testing, and the stakeholder demo. Agile.",
-    tags: ["RAG", "GPT-4", "Full-Stack"],
+      "Trained a logistic-regression graduation-risk model (Python, scikit-learn) reaching 86% accuracy and surfacing the three most predictive factors, and built a multi-class classifier recommending a student's optimal academic stream — pitched to and well-received by the Indian government.",
+    tags: ["Python", "scikit-learn", "ML"],
   },
   {
-    role: "Supplemental Instruction Leader, Calculus II",
+    role: "Teaching Assistant, Calculus II",
     org: "USC Dornsife",
     period: "Feb 2024 — Present",
     current: true,
     summary:
-      "Lead 15 hrs/week of supplemental instruction for a large Calculus II lecture.",
+      "Facilitate 15 hrs/week of Supplemental Instruction, measurably improving student exam performance and engagement.",
     tags: ["Teaching", "Leadership"],
-  },
-  {
-    role: "Machine Learning Intern",
-    org: "A3 (Evanke)",
-    period: "May — Aug 2024",
-    summary:
-      "Built the initial framework for a logistic multi-classification model — pitched to the Indian government — in Python, and shadowed ML engineers on a neural-network project.",
-    tags: ["Python", "scikit-learn", "TensorFlow"],
   },
   {
     role: "Founder",
@@ -225,6 +226,15 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "semantic-llm-cache",
+    title: "Semantic LLM Cache",
+    tagline:
+      "A drop-in caching proxy that serves reworded LLM queries from cache by meaning — cutting p95 latency ~98% on cache hits.",
+    tags: ["Python", "FastAPI", "Redis", "Vector Search", "Docker"],
+    status: "Live",
+    links: [{ label: "Code", href: "https://github.com/advayiyer7/semantic-llm-cache" }],
+  },
   {
     slug: "milo",
     title: "MILO",
@@ -588,19 +598,20 @@ export const education = {
   certifications: [
     "Machine Learning Specialization — Stanford",
     "Intro to Concurrent & Parallel Programming with GPUs — Johns Hopkins",
+    "Google AI Essentials — Google",
   ],
   coursework: [
     "Data Structures & Algorithms",
-    "Analysis of Algorithms",
+    "Algorithms & Computing",
     "Software Development",
-    "Computer Networking",
     "Operating Systems",
     "Computer Architecture",
     "Computer Systems Organization",
+    "Internetworking",
     "Full-Stack Web Development",
     "Embedded Systems",
     "Distributed Systems & IoT",
-    "Digital Circuits / FPGA Design",
+    "Digital Circuits",
   ],
 } as const;
 
