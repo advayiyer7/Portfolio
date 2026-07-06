@@ -23,7 +23,7 @@ export const hero = {
   eyebrow: "CE & CS @ USC · SWE / AI-ML",
   headline: "I build AI that shows its work.",
   subline:
-    "I'm a Computer Engineering & CS senior at USC, class of 2027. I've shipped multiple AI products — Semantic LLM Cache, Facet, Tek, and MenuBox AI — plus a full-stack AI product for a global manufacturer at Publicis Sapient, and I'm building MILO, an investing bot, with a co-founder. Right now I'm interning at Oraczen, building agentic procurement AI for enterprises with $1B+ in annual spend.",
+    "I'm a Computer Engineering & CS senior at USC, class of 2027. I've shipped multiple AI products — Semantic LLM Cache, Facet, Tek, and MenuBox AI — plus a full-stack AI product for a global manufacturer at Publicis Sapient, and I'm building MILO, an investing bot, with my co-founder. Right now I'm interning at Oraczen, building agentic procurement AI for enterprises with $1B+ in annual spend.",
 } as const;
 
 export const nav = {
@@ -41,7 +41,7 @@ export const nav = {
 export const about = {
   heading: "About",
   body: [
-    "Hi, I'm Advay — a Computer Engineering & Computer Science senior at USC, graduating in 2027 with a 3.94 cumulative GPA. I care about software engineering and the responsible deployment of generative and agentic AI, and I like building products people can actually use. I've built and shipped several products solo: Semantic LLM Cache, a drop-in caching proxy for LLM APIs; Facet, an AI jewelry-design studio; Tek, a local-first desktop agent for your files; and MenuBox AI, a menu-recommendation app — and I'm now building MILO, an investing bot that watches your portfolio and pings you near stop-loss, with a co-founder.",
+    "Hi, I'm Advay — a Computer Engineering & Computer Science senior at USC, graduating in 2027 with a 3.94 cumulative GPA. I'm interested in software engineering and the responsible deployment of generative and agentic AI, and I like building products people can actually use. I've built and shipped several products solo: Semantic LLM Cache, a drop-in caching proxy for LLM APIs; Facet, an AI jewelry-design studio; Tek, a local-first desktop agent for your files; and MenuBox AI, a menu-recommendation app — and I'm now building MILO, an investing bot that watches your portfolio and pings you near stop-loss, with my co-founder.",
     "During my internship at Publicis Sapient, I built and delivered a full-stack AI battery-recommendation product to a global automotive battery manufacturer as the sole intern — owning the React / AWS Amplify front end and a Python / FastAPI service end to end. Right now I'm an AI Engineer intern at Oraczen, a startup building agentic AI for enterprise procurement.",
     "Beyond shipping, I want to understand models, not just use them — lately that's meant digging into how transformers use their context windows, confidence scoring for LLM answers via entropy over answer-localized logprobs, and lightweight probes on model internals. Alongside this, I'm engaged in GNN-based task-scheduling research with Prof. Bhaskar Krishnamachari at USC.",
     "Outside of my internship, projects, and coursework, I've led Calculus II supplemental instruction at USC for the past 2.5 years, and I unwind with sports, gaming, and poker.",

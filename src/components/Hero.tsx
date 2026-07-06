@@ -19,7 +19,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden px-5 pb-8 pt-16 sm:px-8"
+      className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden px-5 pb-6 pt-14 sm:px-8"
     >
       {/* background layers */}
       <div className="pointer-events-none absolute inset-0 bg-dot-grid mask-radial-fade opacity-60" />
@@ -39,13 +39,13 @@ export default function Hero() {
 
           <motion.h1
             {...rise(0.12)}
-            className="mt-3 font-display text-4xl font-semibold leading-[1.04] tracking-tight sm:text-5xl lg:text-[3.4rem]"
+            className="mt-3 font-display text-3xl font-semibold leading-[1.04] tracking-tight sm:text-4xl lg:text-[2.9rem]"
           >
             {site.name}
           </motion.h1>
 
           {/* CTAs */}
-          <motion.div {...rise(0.22)} className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <motion.div {...rise(0.22)} className="mt-5 flex flex-wrap items-center justify-center gap-3">
             <a
               href="#projects"
               className="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-bg transition-transform hover:scale-[1.03]"
@@ -65,14 +65,14 @@ export default function Hero() {
         </div>
 
         {/* continues: bio + stats (the former About) */}
-        <div id="about" className="mt-6 scroll-mt-24 border-t border-border/60 pt-5">
-          <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:gap-14">
-            <div className="space-y-3">
+        <div id="about" className="mt-5 scroll-mt-24 border-t border-border/60 pt-4">
+          <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr] lg:gap-10">
+            <div className="space-y-2.5">
               {about.body.map((p, i) => (
                 <motion.p
                   key={i}
                   {...rise(0.4 + i * 0.06)}
-                  className="text-[0.9rem] leading-[1.5] text-muted"
+                  className="text-[0.85rem] leading-[1.45] text-muted"
                 >
                   {p}
                 </motion.p>
