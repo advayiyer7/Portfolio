@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <ScrollLine />
       <Nav />
-      <main>
+      <main id="main-content">
         <Hero />
         <Experience />
         <Skills />

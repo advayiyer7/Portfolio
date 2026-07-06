@@ -226,7 +226,7 @@ export type Project = {
   detail?: ProjectDetail; // present → gets its own /projects/[slug] page
 };
 
-export const projects: Project[] = [
+const projectsSource: Project[] = [
   {
     slug: "semantic-llm-cache",
     title: "Semantic LLM Cache",
@@ -581,6 +581,12 @@ Python sidecar (FastAPI · dynamic port)
     },
   },
 ];
+
+// Display order — row 1: Tek · MILO, row 2: Semantic LLM Cache · Facet, then MenuBox AI.
+const projectOrder = ["tek", "milo", "semantic-llm-cache", "facet", "menubox-ai"];
+export const projects: Project[] = projectOrder
+  .map((slug) => projectsSource.find((p) => p.slug === slug))
+  .filter((p): p is Project => p !== undefined);
 
 export function getProject(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);

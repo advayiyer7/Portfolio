@@ -89,7 +89,7 @@ export default async function ProjectPage({ params }: Params) {
         </div>
       </header>
 
-      <main>
+      <main id="main-content">
         {/* hero */}
         <section className="relative overflow-hidden px-5 py-16 sm:px-8 sm:py-20">
           <div className="pointer-events-none absolute inset-0 bg-dot-grid mask-radial-fade opacity-50" />
@@ -104,7 +104,7 @@ export default async function ProjectPage({ params }: Params) {
                   height={76}
                   priority
                   className="rounded-2xl"
-                  style={{ filter: "drop-shadow(0 0 28px rgba(77,224,240,0.5))" }}
+                  style={{ filter: "drop-shadow(0 0 28px rgba(217,164,91,0.45))" }}
                 />
                 <div>
                   <span className="label-mono">{d.type}</span>
